@@ -1,0 +1,176 @@
+<form name="addForm"
+    form-assist
+    applied-invalid-type="validity"
+    novalidate>
+        <!-- add poster overlay -->
+    <div class="overlay-internal clearfix">
+
+        <!-- ------- -->
+        <!-- PRIMARY -->
+        <!-- ------- -->
+        <div class="overlay-section">
+            <header>Grouping</header>
+
+            <div class="basicContainer fullWidth">
+                <h3>Medium</h3>
+                <form name="mediumForm" class="basicContainer">
+                    <input id="medRad1" type="radio" ng-model="medium" ng-change="updateMedium(medium)" value="poster">
+                    <label for="medRad1" class="overlayRadio left">Poster</label>
+
+                    <input id="medRad2" type="radio" ng-model="medium" ng-change="updateMedium(medium)" value="ticket">
+                    <label for="medRad2" class="overlayRadio middle">Ticket</label>
+
+                    <input id="medRad3" type="radio" ng-model="medium" ng-change="updateMedium(medium)" value="postCard">
+                    <label for="medRad3" class="overlayRadio right">Post Card</label>
+                </form>
+            </div>
+            <div class="basicContainer fullWidth">
+                <h3>Type</h3>
+                <form name="typeForm" class="basicContainer">
+                    <input id="typRad1" type="radio" ng-model="type" ng-change="updateMedium(type)" value="music">
+                    <label for="typRad1" class="overlayRadio left">Music</label>
+
+                    <input id="typRad2" type="radio" ng-model="type" ng-change="updateMedium(type)" value="Art">
+                    <label for="typRad2" class="overlayRadio middle">Art</label>
+
+                    <input id="typRad3" type="radio" ng-model="type" ng-change="updateMedium(type)" value="Political">
+                    <label for="typRad3" class="overlayRadio right">Political</label>
+                </form>
+            </div>
+            <!-- add poster artist -->
+            <div class="basicContainer addCollection">
+                <infinite-artists ng-model="artistSigned"></infinite-list>
+            </div>
+        </div>
+        <!-- --------- -->
+        <!-- SECONDARY -->
+        <!-- --------- -->
+        <div class="overlay-section middle">
+            <h2>Poster Specific</h2>
+
+            <div class="basicContainer fullWidth">
+                <h3>Collection Title</h3>
+                <input ng-model="posterCollection" placeholder="eg: North Korean">
+            </div>
+
+            <div class="basicContainer fullWidth">
+                <h3>Series</h3>
+                <input ng-model="posterSeries"  placeholder="eg: Mental as anything">
+            </div>
+
+            <div class="basicContainer inputHalfWidth padd">
+                <h3>Series Number</h3>
+                <input ng-model="seriesNumber" placeholder="eg: 5">
+            </div>
+
+            <div class="basicContainer inputHalfWidth">
+                <h3>Poster Number</h3>
+                <input ng-model="posterNumber" placeholder="eg: 120/344">
+            </div>
+
+            <div class="basicContainer fullWidth">
+                <h3>Additional Information</h3>
+                <textarea
+                        ng-model="posterAddInfo"
+                        placeholder="eg: Contains a hair from Chad Kroeger"
+                        max-length="30"
+                        rows="4"
+                        class="modal-textblock"
+                        >
+                </textarea>
+            </div>
+
+            <div class="basicContainer inputThirdWidth padd">
+                <h3>Hand Made</h3>
+                <input type="checkbox" ng-model="technical1"  placeholder="eg: Mental as anything">
+            </div>
+
+            <div class="basicContainer inputThirdWidth padd">
+                <h3>Silk Screen</h3>
+                <input type="checkbox" ng-model="technical2"  placeholder="eg: Mental as anything">
+            </div>
+
+            <div class="basicContainer inputThirdWidth">
+                <h3>Technical</h3>
+                <input type="checkbox" ng-model="technical3"  placeholder="eg: Mental as anything">
+            </div>
+        </div>
+
+        <!-- ------- -->
+        <!-- SPECIAL -->
+        <!-- ------- -->
+        <!-- music -->
+        <div class="overlay-section" ng-show="type=='music'">
+            <h2>Context Specific</h2>
+
+            <div class="basicContainer inputThirdWidth padd">
+                <h3>Context</h3>
+<!--                 <input
+                        id="musicContext"
+                        name="musicContextName"
+                        ng-model="musicContext"
+                        ui-select2="musicContextName"
+                        data-placeholder="Select a context"
+                        required
+                        > -->
+            </div>
+
+            <!-- location Based -->
+            <div class="basicContainer fullWidth">
+                <h3>{{musicContext.text}} Title</h3>
+                <input ng-model="specialMusicTitle"  placeholder="">
+            </div>
+
+            <div class="basicContainer fullWidth">
+                <h3>Year</h3>
+                <input ng-model="bandFocus"  placeholder="eg: 2014">
+            </div>
+
+            <div class="basicContainer fullWidth">
+                <h3>Band Focus</h3>
+                <input ng-model="bandFocus"  placeholder="eg: Billy Talent">
+            </div>
+
+            <div class="basicContainer fullWidth">
+                <h3>Additional Information</h3>
+                <textarea
+                        ng-model="posterAddInfo"
+                        placeholder="eg: Contains a hair from Chad Kroeger"
+                        max-length="30"
+                        rows="4"
+                        class="modal-textblock"
+                        >
+                </textarea>
+            </div>
+
+
+        </div>
+        <!-- general -->
+        <div class="overlay-section" ng-show="type=='music'">
+            <h2>Special</h2>
+
+            <div class="basicContainer inputThirdWidth padd">
+                <h3>Context</h3>
+<!--                 <input
+                        id="musicContext"
+                        name="musicContextName"
+                        ng-model="musicContext"
+                        ui-select2="musicContextName"
+                        data-placeholder="Select a context"
+                        required
+                        > -->
+            </div>
+
+            <!-- location Based -->
+            <div class="basicContainer fullWidth">
+                <h3>Title</h3>
+                <input ng-model="specialMusicTitle"  placeholder="eg: Soundwave">
+            </div>
+
+            <div class="basicContainer fullWidth">
+                <h3>Year</h3>
+                <input ng-model="bandFocus"  placeholder="eg: Billy Talent">
+            </div>
+        </div>
+    </div>
+</form>

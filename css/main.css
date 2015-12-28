@@ -1,0 +1,339 @@
+@font-face
+{
+    font-family: OpenSans;
+
+    src: url('../fonts/OpenSans-Regular.ttf'),
+    url('../fonts/OpenSans-Regular-webfont.woff') format('woff');
+}
+@font-face
+{
+    font-family: OpenSans-Semibold;
+
+    src: url('../fonts/OpenSans-Semibold.ttf'),
+    url('../fonts/OpenSans-Semibold-webfont.woff') format('woff');
+}
+
+h1, h2, h3, h4, h5, h6 {margin:0;}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+    }
+
+body {
+    background:#000;
+    font-family:openSans;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.pull-left {
+    float:left;
+}
+
+.pull-right {
+    float-right;
+}
+
+.width-restriction {
+    max-width:1280px;
+    min-width:1280px;
+}
+
+/*Main*/
+.content-container {
+    height:auto;
+    width:100%;
+}
+
+/* ============================== */
+/* ========= Head / Nav ========= */
+/* ============================== */
+.nav-head-container {
+    width:100%;
+    height:275px;
+    position:relative;
+}
+
+    .header-visuals {
+        max-width:1500px;
+        margin:0 auto;    
+        height:275px;
+        position:relative;
+    }
+
+    .header-visuals > div {
+        width:100%;
+        height:100%;
+        position:absolute;
+    }
+
+    .header-visuals > .image {
+        background:url('http://2.bp.blogspot.com/-o93HQwmsjTQ/U133f9mh3XI/AAAAAAABDuw/tO1B7ZsjMsM/s1600/moe-New-Orleans-Poster-James-Eads-2014-1.jpg');
+        background-position:center;
+        background-attachment: fixed;
+        background-size:cover;
+    }
+
+    .header-visuals > .overlay {
+        background: rgba(0,0,0,1);
+        background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(40%, rgba(0,0,0,0.6)), color-stop(60%, rgba(0,0,0,0.6)), color-stop(100%, rgba(0,0,0,1)));
+        background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,1) 100%);
+        background: -o-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,1) 100%);
+        background: -ms-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,1) 100%);
+        background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
+    }
+
+    .header-visuals > .text {
+        color: #E6E7E8;
+        font-family: openSans-semibold;
+        position: absolute;
+        bottom: 50px;
+        width: 100%;
+        text-align: center;
+        font-size: 74px;
+        height: 54px;
+        line-height: 52px;
+        cursor: default;
+    }
+
+    .white-bar {
+        width:100%;
+        height:50px;
+        position:absolute;
+        bottom:0;
+        border-bottom:2px solid white;        
+    }    
+
+        .primary-nav-actions {
+            width:100%;    
+            height:100%;
+        }
+
+        .nav-fill-center {
+            height:50px;
+            background:white;
+            overflow:hidden;
+        }
+
+        .primary-nav-actions > .nav-action {
+            float: left;
+            width: auto;
+            height: auto;
+            padding: 15px 20px;
+            line-height: 20px;
+            font-size: 17px;
+            box-sizing: border-box;
+            font-family: openSans-semibold;
+            cursor:pointer;
+            color:white;
+        }
+
+        .primary-nav-actions > .nav-action.login {
+            float:right;
+        }
+
+        .nav-action:hover,
+        .nav-action.selected {
+            background:white;
+            color:black;
+        }
+
+.white-bar > div {
+    float:left;
+}
+
+.nav-fill-left,
+.nav-fill-right {
+    width: calc(50% - 640px);
+    height:50px;
+    background:white;
+}
+
+/* ============================= */
+/* ========= Sub / Nav ========= */
+/* ============================= */
+
+
+/* ============================= */
+/* ========= DropDowns ========= */
+/* ============================= */
+.drop-down-container {
+    width:1280px;
+    height:0;
+    position:relative;
+    margin:10px auto 0 auto;
+    overflow:hidden;
+    transition: height 0.25s ease-in-out;
+}
+
+    .drop-down-contents {
+        width:100%;
+        height:auto;
+        position:absolute;
+        bottom:0;
+    }
+
+        .drop-down-form {
+            width:100%;
+            background:white;
+        }
+
+        .add > .drop-down-form {height:auto;}
+        .search > .drop-down-form {height:100px;}  
+        .contact > .drop-down-form {height:300px;}
+        .login > .drop-down-form {height:400px;}        
+
+/* ============================= */
+/* ============ ADD ============ */
+/* ============================= */
+.overlay-internal {
+    box-sizing:border-box;
+    padding:10px;
+}
+
+.overlay-section {
+    width:33%;
+    float:left;
+}
+
+.add header {
+    width:100%;
+    text-align:center;
+    font-size:16px;
+    font-weight:bold;
+    font-family:'OpenSans-Semibold';
+    box-sizing:border-box;
+    padding:5px 0;
+    margin:0 20px;
+    border-bottom:1px solid #ccc;
+}
+
+/* ============================= */
+/* ========== Posters ========== */
+/* ============================= */
+.list-container {
+    width:1280px;
+    margin:0 auto;
+    height:auto;
+    position:relative;
+}
+
+.sub-nav-container {
+    width:100%;
+    height:35px;
+    clear:both;
+    margin: 0 auto;
+    padding:20px 0;
+}
+
+    .sub-nav-action {
+        height:35px;
+        width:35px;
+        float:left;
+        margin-left:20px;
+        background-image:url('../images/sprites.png');
+        cursor:pointer;
+    }
+
+        .sub-nav-action.list {
+            background-position:73px -1px;
+ 
+        }
+
+        .sub-nav-action.grid {
+            background-position:35px -1px;
+        }
+
+        .sub-nav-action.list.selected {
+            background-position:-1px -1px;            
+            cursor:auto;
+        }
+
+        .sub-nav-action.grid.selected {
+            background-position:-39px -1px;            
+            cursor:auto;
+        }        
+
+    /* ============================= */
+    /* =========== Block =========== */
+    /* ============================= */
+    .grid-view {
+        width:100%;
+        height:auto;
+        box-sizing:border-box;
+    }
+
+        .block {
+            width: 400px;
+            margin: 0 0 20px 20px;
+            float: left;
+            height: 600px;
+            background: white;
+            position:relative;    
+            cursor:pointer;        
+        }
+
+            .block-image {
+                width:100%;
+                height:100%;
+                background:url('http://www.collectorsweekly.com/articles/wp-content/uploads/2012/04/Mr_Tambourine_Man_RED.jpg');
+                background-position:cover;
+                background-position:center;
+            }
+
+            .block-information {
+                width:100%;
+                height:auto;
+                position:absolute;
+                bottom:0;
+                left:0;
+            }
+
+                .block-information > span {
+                    color:white;
+                    width:100%;
+                    display:block;
+                    background:rgba(0,0,0,0.9);
+                    margin-top:5px;               
+                    padding:5px 10px;     
+                }
+
+                .block-information > .artist {
+                    font-family: OpenSans-Semibold;
+                    font-size: 18px;
+                    color:#ddd;
+                }
+
+
+    /* ============================= */
+    /* ============ Row ============ */
+    /* ============================= */
+    .row-view {
+        width:100%;
+        height:100%;
+        padding:0 20px;
+        box-sizing:border-box;
+    }
+
+        .row {
+            width:100%;
+            height:300px;
+            background:white;
+            margin-bottom:20px;
+        }
+
+

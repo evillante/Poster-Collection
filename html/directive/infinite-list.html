@@ -1,0 +1,10 @@
+<div class="infinite-list">
+    <h3 class="string-title">{{inputLabel}}</h3>
+    <h3 class="input-title">{{radioLabel}}</h3>
+
+    <input type="text" ng-model="inputValue" ng-enter="addRow(inputValue)">
+    {{ngModel}}
+    <div class="list-row" ng-repeat="row in ngModel.$modelView">
+        {{row}}
+    </div>
+</div>

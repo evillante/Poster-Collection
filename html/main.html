@@ -1,0 +1,76 @@
+<div ng-controller="NavigationCtrl">
+    <div class="nav-head-container">
+        <header>
+            <div class="header-visuals width-restriction">
+                <div class="image"></div>
+                <div class="overlay"></div>
+                <span class="text no-select">Frank's Posters</span>
+            </div>
+        </header>    
+        <nav class="white-bar">
+            <div class="nav-fill-left"></div>
+            <div class="primary-nav-actions width-restriction no-select">
+                <div 
+                    class="nav-action add"     
+                    ng-click="selectTab('add')"
+                    ng-class="{'selected' : selected('add')}">Add</div>
+                <div 
+                    class="nav-action search"  
+                    ng-click="selectTab('search')"
+                    ng-class="{'selected' : selected('search')}">Search</div>
+                <div 
+                    class="nav-action contact" 
+                    ng-click="selectTab('contact')"
+                    ng-class="{'selected' : selected('contact')}">Contact</div>
+                <div 
+                    class="nav-action login"   
+                    ng-click="selectTab('login')"
+                    ng-class="{'selected' : selected('login')}">Login</div>
+                <div class="nav-fill-center"></div>            
+            </div>
+            <div class="nav-fill-right"></div>
+        </nav>
+    </div>
+
+    <div class="drop-down-container" toggle-drop-down>
+        <div class="drop-down-contents add" type="add">
+            <div class="drop-down-form" ng-include="'html/forms/add-form.html'"></div>    
+        </div>
+        <div class="drop-down-contents search" type="search">
+            <div class="drop-down-form"></div>    
+        </div> 
+        <div class="drop-down-contents contact" type="contact">
+            <div class="drop-down-form"></div>    
+        </div>
+        <div class="drop-down-contents login" type="login">
+            <div class="drop-down-form"></div>    
+        </div>                
+    </div>
+</div>
+
+<div class="list-container" ng-controller="ListCtrl">
+    <nav class="sub-nav-container">
+        <div 
+            class="sub-nav-action grid" 
+            ng-click="selectView('grid')"
+            ng-class="{'selected' : viewed('grid')}"></div>   
+        <div 
+            class="sub-nav-action list" 
+            ng-click="selectView('row')"
+            ng-class="{'selected' : viewed('row')}"></div>
+    </nav>
+    <div class="grid-view clearfix" ng-show="viewed('grid')">
+        <div class="block" ng-repeat="poster in posters">
+            <div class="block-image">
+                <div class="block-information">
+                    <span class="artist">Martin Sharp</span>
+                    <span class="context">Pretty images</span>
+                    <span class="special">Liho</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-view" ng-show="viewed('row')">
+        <div class="row" ng-repeat="poster in posters"></div>
+    </div>
+</div>
